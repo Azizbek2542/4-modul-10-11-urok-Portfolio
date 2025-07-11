@@ -1,0 +1,592 @@
+/* @media (min-width:1440px) {
+    body {
+        justify-content: center;
+        display: grid;
+    }
+    .navbar {
+        gap: 600px;
+    }
+} */
+
+body {
+    background-color: #1F242D;
+}
+
+.container {
+    max-width: 1600px;
+}
+
+@media (max-width:1024px) {
+    .navbar {
+        padding: 0px 90px;
+    }
+    .links-container a {
+        cursor: none;
+    }
+    .links-container a:hover {
+    color: white;
+    }
+    .links-container a:active {
+    color: aqua;
+}
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 25px 110px;
+}   
+.home-link {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-style: 'Regular';
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: white;
+    animation: fade 1s ease forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: flex-end;
+    gap: 40px;
+}   
+nav a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-style: 'Regular';
+    font-size: 17px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: white;
+    transition: 0.3s ease;
+    animation: fade 1s ease forwards;
+    opacity: 0;
+}   
+.links-container a:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.links-container a:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.links-container a:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.links-container a:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.links-container a:nth-child(5) {
+  animation-delay: 1.2s;
+}
+.links-container a:nth-child(6) {
+  animation-delay: 1.4s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav a:hover {
+    color: aqua;
+}
+nav .home-link {
+    margin-right: auto;
+}   
+#sidebar-active {
+    display: none;
+}   
+.open-sidebar-button, .close-sidebar-button {
+    display: none;
+}   
+@media(max-width:768px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 35px;
+        justify-content: flex-start;
+        gap: 5px;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 250px;   
+
+        background: linear-gradient(#1F242D, aqua 120%);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: right 1s ease-in-out;
+}   
+.links-container a {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 6px 20px 6px 0px;
+    justify-content: flex-end;
+    font-size: 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation-name: none;
+    cursor: none;
+} 
+.links-container a:hover {
+    color: white;
+    }
+.links-container a:active {
+    color: aqua;
+}
+.links-container a::after {
+    content: '';
+    width: 92%;
+    height: 0.5px;
+    background-color: rgb(121, 121, 121);
+    position: absolute;
+    top: 30px;
+}  
+.open-sidebar-button {
+    display: block;
+}   
+#sidebar-active:checked ~ .links-container a:nth-child(2) {
+    animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+  #sidebar-active:checked ~ .links-container a:nth-child(3) {
+    animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    
+  }
+
+  #sidebar-active:checked ~ .links-container a:nth-child(4) {
+    animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    
+  }
+
+  #sidebar-active:checked ~ .links-container a:nth-child(5) {
+    animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    
+  }
+  #sidebar-active:checked ~ .links-container a:nth-child(6) {
+    animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-delay: 1.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    
+  }
+  #sidebar-active:checked ~ .links-container a:nth-child(7) {
+    animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-delay: 1.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    
+  }
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.close-sidebar-button {
+    display: block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+#sidebar-active:checked ~ .links-container {
+    right: 0;
+}   
+#sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+nav {
+    padding: 25px 20px;
+}
+.home-link {
+    animation-name: none;
+    opacity: 1;
+}
+.parent-container {
+  padding: 0px 20px !important;
+}
+}   
+
+@media (max-width:600px) {
+    .links-container {
+        width: 50%;
+    }
+}
+
+@media (max-width:500px) {
+    .links-container a:after {
+        width: 85%;
+    }
+}
+
+@media (max-width:420px) {
+    .links-container a:after {
+        width: 81%;
+    }
+    .home-link {
+        font-size: 25px;
+    }
+}
+
+.typed-cursor {
+    color: #00EEFF;
+    font-size: 50px;
+    white-space: nowrap;
+}
+
+#typed-text {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 50px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: aqua;
+}
+
+.parent-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 110px;  
+    margin-top: 100px;
+}
+
+.prnt-text {
+    width: auto;
+}
+
+.prnt-text-lorem {
+  width: 566px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: 'Regular';
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: white;
+}
+
+.info2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.gapper {
+    display: grid;
+    gap: 5px !important;
+}
+
+.prnt-text h1 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 50px;
+    line-height: 64.06px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: white;
+}
+
+.Creator-name {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    background: linear-gradient(to left, #000000, #01d4c2, #00fff7);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+   -webkit-text-fill-color: transparent;
+  animation: rrEffect 6s ease infinite;
+  animation-delay: 2.3s;
+  text-shadow: 0 0 10px rgba(1, 212, 194, 0.25);
+}
+
+@keyframes rrEffect {
+  0%   { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
+
+.Azix {
+    max-width: 300px;
+    width: auto;
+    height: 500px;
+}
+
+.word-fade, .word-fade3 {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: word-fade 0.7s forwards;
+}
+
+.word-fade:nth-child(1) { animation-delay: 0.4s; }
+.word-fade:nth-child(2) { animation-delay: 0.6s; }
+.word-fade:nth-child(3) { animation-delay: 0.8s; }
+.word-fade:nth-child(4) { animation-delay: 1s; }
+.word-fade:nth-child(5) { animation-delay: 1.2s; }
+.word-fade:nth-child(6) { animation-delay: 1.4s; }
+.word-fade:nth-child(7) { animation-delay: 1.6s; }
+.word-fade:nth-child(8) { animation-delay: 1.8s; }
+.word-fade:nth-child(9) { animation-delay: 2s; }
+.word-fade:nth-child(10) { animation-delay: 2.2s; }
+
+/* .word-fade:nth-child(1) { animation-delay: 2s; }
+.word-fade:nth-child(2) { animation-delay: 2.2s; }
+.word-fade:nth-child(3) { animation-delay: 2.4s; }
+.word-fade:nth-child(4) { animation-delay: 2.6s; }
+.word-fade:nth-child(5) { animation-delay: 2.8s; }
+.word-fade:nth-child(6) { animation-delay: 3s; }
+.word-fade:nth-child(7) { animation-delay: 3.2s; }
+.word-fade:nth-child(8) { animation-delay: 3.4s; }
+.word-fade:nth-child(9) { animation-delay: 3.6s; }
+.word-fade:nth-child(10) { animation-delay: 3.8s; } */
+
+/* .word-fade2:nth-child(1) { animation-delay: 2.4s; }
+.word-fade2:nth-child(2) { animation-delay: 2.6s; }
+.word-fade2:nth-child(3) { animation-delay: 2.8s; }
+.word-fade2:nth-child(4) { animation-delay: 3s; }
+.word-fade2:nth-child(5) { animation-delay: 3.2s; }
+.word-fade2:nth-child(6) { animation-delay: 3.4s; }
+.word-fade2:nth-child(7) { animation-delay: 3.6s; }
+.word-fade2:nth-child(8) { animation-delay: 3.8s; }
+.word-fade2:nth-child(9) { animation-delay: 4s; }
+.word-fade2:nth-child(10) { animation-delay: 4.2s; }
+.word-fade2:nth-child(11) { animation-delay: 4.4s; }
+.word-fade2:nth-child(12) { animation-delay: 4.6s; }
+.word-fade2:nth-child(13) { animation-delay: 4.8s; }
+.word-fade2:nth-child(14) { animation-delay: 5s; }
+.word-fade2:nth-child(15) { animation-delay: 5.2s; }
+.word-fade2:nth-child(16) { animation-delay: 5.4s; }
+.word-fade2:nth-child(17) { animation-delay: 5.6s; }
+.word-fade2:nth-child(18) { animation-delay: 5.8s; }
+.word-fade2:nth-child(19) { animation-delay: 6s; } */
+
+.word-fade3:nth-child(1) { animation-delay: 4.2s; }
+.word-fade3:nth-child(2) { animation-delay: 4.4s; }
+.word-fade3:nth-child(3) { animation-delay: 4.6s; }
+.word-fade3:nth-child(4) { animation-delay: 4.8s; }
+.word-fade3:nth-child(5) { animation-delay: 5s; }
+.word-fade3:nth-child(6) { animation-delay: 5.2s; }
+
+.logos-parent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 1.5px solid aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+}
+
+.prnt-text button {
+  width: 176px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  opacity: 1;
+  border-radius: 35.2px;
+  background-color: aqua;
+  border: none;
+  box-shadow: 0px 0px 8.8px 0px aqua;
+  margin-top: 30px;
+  font-size: 18px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-style: Bold;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+@keyframes word-fade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width:1260px) {
+  .gapper {
+    gap: 0px !important;
+  }
+  .prnt-text-lorem {
+    width: 400px;
+  }
+  .prnt-text {
+    width: auto;
+  }
+  .prnt-text h1 {
+    font-size: 28px;
+  }
+  .Creator-name {
+    font-size: 40px;
+  }
+  #typed-text {
+    font-size: 28px;
+  }
+  .typed-cursor {
+    font-size: 28px;
+  }
+  .Azix {
+    width: auto;
+    height: 350px;
+  }
+}
+
+@media (max-width:1024px) {
+  .parent-container {
+    display: grid;
+    justify-content: center;
+  }
+  .prnt-text-lorem {
+    width: 100%;
+  }
+  .Azix-parent {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .Azix {
+    width: 540px;
+    height: auto;
+    display: flex;
+  }
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+  .prnt-text button {
+    width: 155px;
+    height: 38px;
+  }
+}
+
+@media (max-width:465px) {
+  .info2 {
+    gap: 10px !important;
+  }
+  .prnt-text-lorem {
+    font-size: 12px;
+  }
+  .Creator-name {
+    position: relative;
+    top: 15px;
+  }
+  .positioner {
+    position: relative;
+    top: 40px;
+  }
+  #typed-text {
+    font-size: 20px;
+  }
+  .typed-cursor {
+    font-size: 20px;
+  }
+  .prnt-text h1 {
+    font-size: 20px;
+  }
+  .circle {
+    width: 35px;
+    height: 35px;
+  }
+  .prnt-text svg {
+    width: 15px;
+    height: 15px;
+  }
+  .prnt-text button {
+    width: 140px;
+    height: 34px;
+    font-size: 15px;
+  }
+  .parent-container {
+    margin-top: auto;
+  }
+  .gapper {
+    gap: 0px !important;
+  }
+  .Azix {
+    width: 180px !important;
+    height: auto;
+  }
+}
+
+@media (max-width:420px) {
+  .parent-container {
+    padding: 0px 10px !important;
+    gap: 30px;
+  }
+  nav {
+    padding: 25px 10px;
+  }
+  .Creator-name {
+    font-size: 35px;
+  }
+}
+
+
