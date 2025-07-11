@@ -11,6 +11,7 @@
 
     <section class="container">
         <nav>
+          <div class="nav-container">
             <a class="home-link" href="">Portfolio</a>
         <input type="checkbox" id="sidebar-active">
         <label for="sidebar-active" class="open-sidebar-button">
@@ -25,9 +26,10 @@
 
             <a href="#">Home</a>
             <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
+            <a href="#Services">Services</a>
+            <a href="#Portfolio">Portfolio</a>
             <a href="#">Contact</a>
+        </div>
         </div>
         </nav>
 
@@ -58,7 +60,7 @@
                 </div>
             </div>
 
-            <h1 data-aos="zoom-in" data-aos-duration="1000" class="Service-title">Our <span class="aqua-title">Services</span></h1>
+            <h1 id="Services" data-aos="zoom-in" data-aos-duration="1000" class="Service-title">Our <span class="aqua-title">Services</span></h1>
             <div class="parent-container2">
               <div class="box one">
                 <svg data-aos="flip-right" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M791-55 280-566l-87 87 183 183-56 56L80-480l143-143L55-791l57-57 736 736-57 57Zm-54-282-57-57 87-87-183-183 56-56 240 240-143 143Z"/></svg>
@@ -79,7 +81,7 @@
                 <button data-aos="zoom-in">Read more</button>
               </div>
             </div>
-            <div class="Project-container">
+            <div id="Portfolio" class="Project-container">
               <h1 data-aos="zoom-in" data-aos-duration="1000">Latest <span class="aqua-title2">Project</span></h1>
               <div class="parent-container3">
                 <img data-aos="zoom-in" src="./imgs/projects.png" alt="">
@@ -123,6 +125,18 @@
 <script>
   AOS.init({
     once: true
+  });
+</script>
+
+
+<script>
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.nav-container');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
   });
 </script>
 </body>

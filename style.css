@@ -1,25 +1,23 @@
-/* @media (min-width:1440px) {
-    body {
-        justify-content: center;
-        display: grid;
-    }
-    .navbar {
-        gap: 600px;
-    }
-} */
-
 body {
     background-color: #1F242D;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
     max-width: 1600px;
+    margin: 0 auto;
+}
+
+@media(max-width:1520px) {
+  nav {
+    width: auto;
+  }
 }
 
 @media (max-width:1024px) {
-    .navbar {
-        padding: 0px 90px;
-    }
     .links-container a {
         cursor: none;
     }
@@ -32,11 +30,26 @@ body {
 }
 
 nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 25px 110px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1F242D;
 }   
+nav .nav-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 35px 110px 25px 110px;
+  transition: all 0.45s ease;
+}
+.nav-container.scrolled {
+  box-shadow: 0 2px 30px rgba(0,0,0,0.3);
+  padding-top: 25px;
+}
 .home-link {
     font-family: 'Poppins';
     font-weight: 400;
@@ -118,7 +131,8 @@ nav .home-link {
 }   
 .open-sidebar-button, .close-sidebar-button {
     display: none;
-}   
+} 
+  
 @media(max-width:768px) {
     .links-container {
         flex-direction: column;
@@ -181,7 +195,6 @@ nav .home-link {
     animation-delay: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    
   }
 
   #sidebar-active:checked ~ .links-container a:nth-child(4) {
@@ -190,7 +203,6 @@ nav .home-link {
     animation-delay: 1.2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    
   }
 
   #sidebar-active:checked ~ .links-container a:nth-child(5) {
@@ -199,7 +211,6 @@ nav .home-link {
     animation-delay: 1.4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    
   }
   #sidebar-active:checked ~ .links-container a:nth-child(6) {
     animation-name: fadeInUp;
@@ -207,7 +218,6 @@ nav .home-link {
     animation-delay: 1.6s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    
   }
   #sidebar-active:checked ~ .links-container a:nth-child(7) {
     animation-name: fadeInUp;
@@ -215,7 +225,6 @@ nav .home-link {
     animation-delay: 1.8s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    
   }
   @keyframes fadeInUp {
   from {
@@ -243,8 +252,8 @@ nav .home-link {
     left: 0;
     z-index: 9;
 }
-nav {
-    padding: 25px 20px;
+.nav-container {
+    padding: 25px 20px !important;
 }
 .home-link {
     animation-name: none;
@@ -281,7 +290,7 @@ nav {
     padding: 0px 10px !important;
     gap: 30px;
   }
-  nav {
+  .nav-container {
     padding: 25px 10px;
   }
   .Creator-name {
@@ -399,16 +408,16 @@ nav {
   animation: word-fade 0.7s forwards;
 }
 
-.word-fade:nth-child(1) { animation-delay: 0.4s; }
-.word-fade:nth-child(2) { animation-delay: 0.6s; }
-.word-fade:nth-child(3) { animation-delay: 0.8s; }
-.word-fade:nth-child(4) { animation-delay: 1s; }
-.word-fade:nth-child(5) { animation-delay: 1.2s; }
-.word-fade:nth-child(6) { animation-delay: 1.4s; }
-.word-fade:nth-child(7) { animation-delay: 1.6s; }
-.word-fade:nth-child(8) { animation-delay: 1.8s; }
-.word-fade:nth-child(9) { animation-delay: 2s; }
-.word-fade:nth-child(10) { animation-delay: 2.2s; }
+.word-fade:nth-child(1) { animation-delay: 0s; }
+.word-fade:nth-child(2) { animation-delay: 0.2s; }
+.word-fade:nth-child(3) { animation-delay: 0.4s; }
+.word-fade:nth-child(4) { animation-delay: 0.6s; }
+.word-fade:nth-child(5) { animation-delay: 0.8s; }
+.word-fade:nth-child(6) { animation-delay: 1s; }
+.word-fade:nth-child(7) { animation-delay: 1.2s; }
+.word-fade:nth-child(8) { animation-delay: 1.4s; }
+.word-fade:nth-child(9) { animation-delay: 1.6s; }
+.word-fade:nth-child(10) { animation-delay: 1.8s; }
 
 /* .word-fade:nth-child(1) { animation-delay: 2s; }
 .word-fade:nth-child(2) { animation-delay: 2.2s; }
@@ -607,7 +616,7 @@ nav {
     font-size: 15px;
   }
   .parent-container {
-    margin-top: auto;
+    margin-top: 60px;
   }
   .gapper {
     gap: 0px !important;
@@ -665,6 +674,7 @@ nav {
   line-height: 100%;
   letter-spacing: 0%;
   vertical-align: middle;
+  scroll-margin-top: 130px;
 }
 
 .aqua-title {
@@ -783,6 +793,7 @@ nav {
   text-align: center;
   vertical-align: middle;
   color: white;
+  
 }
 
 .Project-container {
@@ -816,4 +827,3 @@ nav {
     display: block;
   }
 }
-
