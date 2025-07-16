@@ -1,18 +1,27 @@
-body {
-    background-color: #1F242D;
-    padding: 0;
-    margin: 0;
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #1F242D;
+  scroll-behavior: smooth;
 }
 
-html {
-  scroll-behavior: smooth;
+#intro-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: #1F242D;
 }
 
 .container {
     max-width: 1600px;
     margin: 0 auto;
+    display: none;
 }
-
 @media(max-width:1520px) {
   nav {
     width: auto;
@@ -1137,3 +1146,119 @@ footer p {
   vertical-align: middle;
   color: white;
 }
+
+.anm-box1 {
+    background-color: blueviolet;
+    height: 50vh;
+    width: 100vw;
+    animation: anm-box1 5s ease infinite;
+    position: relative;
+}
+
+@keyframes anm-box1 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(200%);
+    }
+}
+
+.anm-box2 {
+    background-color: blueviolet;
+    height: 50vh;
+    width: 100vw;
+    animation: anm-box2 5s ease infinite;
+    position: relative;
+}
+
+@keyframes anm-box2 {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+.anm-box3 {
+    background-color: rgb(25, 28, 26);
+    height: 200%;
+    width: 25vw;
+    animation: anm-box3 5s ease infinite;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+@keyframes anm-box3 {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(200%);
+    }
+}
+
+.anm-box4 {
+    background-color: rgb(25, 28, 26);
+    height: 200%;
+    width: 25vw;
+    animation: anm-box4 5s ease infinite;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+}
+
+@keyframes anm-box4 {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-200%);
+    }
+}
+
+.anm-box5 {
+    background-color: aqua;
+    height: 200%;
+    width: 25vw;
+    animation: anm-box5 5s ease infinite;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 25vw;
+}
+
+@keyframes anm-box5 {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(200%);
+    }
+}
+
+.anm-box6 {
+    background-color: rgb(38, 15, 116);
+    height: 200%;
+    width: 25vw;
+    animation: anm-box6 5s ease infinite;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: calc(25vw * 2);
+}
+
+@keyframes anm-box6 {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-200%);
+    }
+}
+
+

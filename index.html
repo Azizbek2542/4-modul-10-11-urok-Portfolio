@@ -8,11 +8,19 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+  <div id="intro-wrapper">
+  <div class="anm-box1"></div>
+    <div class="anm-box2"></div>
+    <div class="anm-box3"></div>
+    <div class="anm-box4"></div>
+    <div class="anm-box5"></div>
+    <div class="anm-box6"></div>
+    </div>
   <div class="submit-msg" id="submit-msg">
                 <h1>Sended</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16"><g fill="white"><path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26l.001.002l4.995 3.178l1.59 2.498C8 14 8 13 8 12.5a4.5 4.5 0 0 1 5.026-4.47zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215l7.494-7.494l1.178-.471z"/><path d="M16 12.5a3.5 3.5 0 1 1-7 0a3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95l-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686"/></g></svg>
             </div>
-    <section class="container">
+    <section id="main-site" class="container">
         <nav>
           <div class="nav-container">
             <a class="home-link" href="">Portfolio</a>
@@ -116,6 +124,8 @@
           <div class="up-btn"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/></svg></a></div>
         </footer>
     </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
 
  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -129,7 +139,7 @@
       backDelay: 1700,
       loop: true,
     });
-  }, 5400);
+  }, 8400);
 </script>
 
 <script>
@@ -138,15 +148,6 @@
     if (sidebarCheckbox.checked) {
       sidebarCheckbox.checked = false;
     }
-  });
-</script>
-
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-  AOS.init({
-    once: true
   });
 </script>
 
@@ -183,6 +184,23 @@
     }
   });
 </script>
+
+
+<script>
+  setTimeout(() => {
+  document.getElementById('intro-wrapper').style.display = 'none';
+  document.getElementById('main-site').style.display = 'block';
+
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+
+  AOS.init({
+    once: true,
+  });
+}, 2650);
+
+</script>
+
 
 </body>
 </html>
