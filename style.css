@@ -426,6 +426,7 @@ footer {
     width: auto;
     height: 500px;
     position: relative;
+    z-index: 100;
 }
 
 .bg-Azix {
@@ -434,7 +435,7 @@ footer {
   width: 300px;
   height: 300px;
   transform: rotate(-225deg);
-  z-index: -1;
+  z-index: 99;
   top: 300px;
   border-radius: 30px;
   background: linear-gradient(to left, #000000, orange, #00fff7);
